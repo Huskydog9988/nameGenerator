@@ -1,46 +1,31 @@
 {
   "name": "namegenerator",
   "version": "0.0.1",
-  "description": "A name generator",
-  "productName": "Name Generator",
+  "description": "A cli to generate names",
+  "main": "dist/index.js",
+  "bin": {
+    "generateName": "dist/index.js"
+  },
+  "repository": "https://github.com/Huskydog9988/nameGenerator.git",
   "author": "Husky",
-  "private": true,
+  "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "dev": "nodeman --watch src/**/*.ts",
+    "create": "yarn build && yarn test",
+    "build": "tsc",
+    "local": "sudo yarn global install && ganerateName"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "core-js": "^3.6.5",
-    "dictionary-en": "^3.1.0",
-    "quasar": "^2.0.0",
-    "vue-i18n": "^9.0.0",
-    "vuex": "^4.0.1"
+    "chalk": "^5.0.0",
+    "clear": "^0.1.0",
+    "commander": "^8.3.0",
+    "figlet": "^1.5.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.13.14",
-    "@quasar/app": "^3.0.0",
-    "@types/node": "^12.20.21",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-vue": "^7.0.0"
-  },
-  "browserslist": [
-    "last 10 Chrome versions",
-    "last 10 Firefox versions",
-    "last 4 Edge versions",
-    "last 7 Safari versions",
-    "last 8 Android versions",
-    "last 8 ChromeAndroid versions",
-    "last 8 FirefoxAndroid versions",
-    "last 10 iOS versions",
-    "last 5 Opera versions"
-  ],
-  "engines": {
-    "node": ">= 12.22.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "@types/node": "^16.11.13",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
   }
 }
